@@ -226,15 +226,13 @@ nav.tabs button.center.on{color:var(--brand)}
 }
 
 /* ===================== RESTYLING GRAFICO (nov 2026) =====================
-   Un solo colore guida (il verde del marchio) in tutte le sezioni, superfici più morbide,
+   Ogni sezione tiene il suo colore (vedi "colori per sezione" sopra), superfici più morbide,
    aree di tocco ≥ 44 px, campi a 16 px (evita lo zoom automatico su iPhone),
    intestazione fissa e barra di navigazione con indicatore. Togliere questo blocco = grafica precedente. */
 :root{--bg:#f3f5f2;--surface2:#eef2ed;--line:#e3e8e2;--radius:20px;--brand:#1f8a5b;
   --shadow:0 1px 2px rgba(20,40,28,.04),0 6px 20px rgba(20,40,28,.06)}
-body[data-sec]{--accent:#1f8a5b;--accent-soft:#e0f2e8;--accent-ink:#fff}
 @media (prefers-color-scheme:dark){
   :root{--bg:#0d1210;--surface:#161d19;--surface2:#1e2722;--line:#26312b;--brand:#3cb87f;--shadow:none}
-  body[data-sec]{--accent:#3cb87f;--accent-soft:#163626;--accent-ink:#06130c}
 }
 html{-webkit-text-size-adjust:100%}
 body{-webkit-tap-highlight-color:transparent;-webkit-font-smoothing:antialiased}
@@ -258,7 +256,7 @@ h3{font-weight:800}
 .btn:active,.chip:active,.seg button:active,nav.tabs button:active,.icon-btn:active{transform:scale(.97)}
 .btn:not(.sec):not(.ghost):not(.danger){box-shadow:0 2px 8px color-mix(in srgb,var(--accent) 28%,transparent)}
 .seg{border-radius:14px;padding:4px}
-.seg button{min-height:40px;border-radius:11px}
+.seg button{min-height:40px;border-radius:11px;padding-left:6px;padding-right:6px}
 .chip{min-height:38px;padding:8px 14px;display:inline-flex;align-items:center;gap:4px;background:var(--surface);transition:background .15s,color .15s}
 .icon-btn{width:42px;height:42px;border-radius:12px;border:0;background:var(--surface);box-shadow:var(--shadow)}
 .x{min-width:36px;min-height:36px}
@@ -276,9 +274,8 @@ input:focus,select:focus{border-color:var(--accent);background:var(--surface)}
 /* barra di navigazione in basso */
 nav.tabs{background:color-mix(in srgb,var(--surface) 88%,transparent);-webkit-backdrop-filter:saturate(1.6) blur(16px);backdrop-filter:saturate(1.6) blur(16px);border-top:1px solid var(--line)}
 nav.tabs button{padding:8px 1px 10px;font-size:11px;min-height:58px;transition:color .15s}
-nav.tabs .in button[data-tab].on{color:var(--brand)}
 nav.tabs button:not(.center) svg{padding:4px 16px;box-sizing:content-box;border-radius:999px;transition:background .2s}
-nav.tabs button.on:not(.center) svg{background:color-mix(in srgb,var(--brand) 15%,transparent)}
+nav.tabs button.on:not(.center) svg{background:color-mix(in srgb,currentColor 15%,transparent)}
 nav.tabs button.center svg{box-shadow:0 6px 18px color-mix(in srgb,var(--brand) 40%,transparent)}
 /* finestre a comparsa dal basso, con maniglia */
 .modal-bg{background:rgba(8,14,10,.45);-webkit-backdrop-filter:blur(2px);backdrop-filter:blur(2px)}
