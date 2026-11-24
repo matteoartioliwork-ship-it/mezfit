@@ -6594,7 +6594,7 @@ function runViewer(root,cfg,o){o=o||{};if(!root)return;const cvs=root.querySelec
   root.querySelectorAll('.v3bar button').forEach(b=>b.onclick=e=>{e.stopPropagation();const k=b.dataset.vi;
     if(k==='pause'){paused=!paused;b.textContent=paused?'▶':'❚❚';}else if(k==='speed'){spd=spd===1?.5:spd===.5?.25:1;b.textContent=spd===1?'1×':spd===.5?'½×':'¼×';}else{vi=+k;V3PREF=V3PREF||{};V3PREF[vk]=vi;}mark();});
   mark();
-  const P2=o.mode==='hold'?9000:4800;const mj=x=>{x=Math.min(1,Math.max(0,x));return x*x*x*(10-15*x+6*x*x);};
+  const P2=o.mode==='hold'?9000:3200;const mj=x=>{x=Math.min(1,Math.max(0,x));return x*x*x*(10-15*x+6*x*x);};
   let lastKey='';
   const frame=now=>{if(!document.body.contains(cvs))return;
     const cw=cvs.clientWidth||300;const dpr=Math.min(2,window.devicePixelRatio||1);const W=Math.round(Math.min(900,cw*dpr)),H=Math.round(W*(o.small?.8:.92));
